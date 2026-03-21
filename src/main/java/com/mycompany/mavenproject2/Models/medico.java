@@ -45,4 +45,11 @@ public class medico extends Persona{
    public void atender(consulta c){
        
    }
+
+    @Override
+    public String toString() {
+        return "medico{" + "especialidad=" + especialidad + ", tarjetaProfesional=" + tarjetaProfesional + '}';
+    }
+   
+   
 }

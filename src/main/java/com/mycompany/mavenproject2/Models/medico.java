@@ -4,6 +4,9 @@
  */
 package com.mycompany.mavenproject2.Models;
 
+
+
+
 /**
  *
  * @author ESTUDIANTE
@@ -11,20 +14,24 @@ package com.mycompany.mavenproject2.Models;
 public class medico extends Persona{
     private String especialidad;
     private String tarjetaProfesional;
+    private int consultorio;
 
-    public medico(String especialidad, String tarjetaProfesional, String nombre, int edad, String cedula) {
+    public medico(String especialidad, String tarjetaProfesional, int consultorio, String nombre, int edad, String cedula) {
         super(nombre, edad, cedula);
         this.especialidad = especialidad;
         this.tarjetaProfesional = tarjetaProfesional;
+        this.consultorio = consultorio;
     }
 
-    public medico(String especialidad, String tarjetaProfesional) {
+    public medico(String especialidad, String tarjetaProfesional, int consultorio) {
         this.especialidad = especialidad;
         this.tarjetaProfesional = tarjetaProfesional;
+        this.consultorio = consultorio;
     }
 
     public medico() {
     }
+
 
     public String getEspecialidad() {
         return especialidad;
@@ -42,14 +49,26 @@ public class medico extends Persona{
         this.tarjetaProfesional = tarjetaProfesional;
     }
     
-   public void atender(consulta c){
-       
+   public void atender(hospital h1){
+       if(h1.getConsulta().isEmpty())   {
+           System.out.println("No hay consultas disponibles");
+       }else    {
+           System.out.println("El medico " +this.getNombre() + " esta ocupado atendiendo la consulta en el consultorio "+this.getConsultorio());
+       }
    }
+
+    public int getConsultorio() {
+        return consultorio;
+    }
+
+    public void setConsultorio(int consultorio) {
+        this.consultorio = consultorio;
+    }
 
     @Override
     public String toString() {
-        return "medico{" + "especialidad=" + especialidad + ", tarjetaProfesional=" + tarjetaProfesional + '}';
+        return "medico{" + "especialidad=" + especialidad + ", tarjetaProfesional=" + tarjetaProfesional + ", consultorio=" + consultorio + '}';
     }
    
-   
+
 }

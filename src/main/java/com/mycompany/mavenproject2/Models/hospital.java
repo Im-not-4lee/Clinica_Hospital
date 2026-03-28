@@ -15,10 +15,10 @@ public class hospital {
     private String ciudad;
     private List<consulta>consulta;
 
-    public hospital(String nombre, String ciudad, List<consulta> consulta) {
+    public hospital(String nombre, String ciudad) {
         this.nombre = nombre;
         this.ciudad = ciudad;
-        this.consulta = consulta;
+        this.consulta = new java.util.ArrayList<>();        // inicializar arreglo
     }
 
     public hospital() {
@@ -46,6 +46,12 @@ public class hospital {
 
     public void setConsulta(List<consulta> consulta) {
         this.consulta = consulta;
+    }
+    
+    public void registrarConsulta(String fecha,String motivo,String diagnostico, int duracionMinutos)    {
+        consulta nueva = new consulta(fecha,motivo,diagnostico,duracionMinutos );     // lista nueva
+        this.consulta.add(nueva);          // se añade a la lista principal
+        System.out.println("Consulta registrada en "+this.nombre);
     }
 
     @Override

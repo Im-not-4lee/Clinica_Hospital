@@ -51,7 +51,18 @@ public class hospital {
     public void registrarConsulta(String fecha,String motivo,String diagnostico, int duracionMinutos)    {
         consulta nueva = new consulta(fecha,motivo,diagnostico,duracionMinutos );     // lista nueva
         this.consulta.add(nueva);          // se añade a la lista principal
+        
         System.out.println("Consulta registrada en "+this.nombre);
+    }
+    
+    public void listarConsultas(hospital h1)   {
+        for(consulta c:h1.getConsulta())    {
+            System.out.println("\n----Lista----");
+            System.out.println("Fecha: "+c.getFecha());
+            System.out.println("Motivo: "+c.getMotivo());
+            System.out.println("Diagnostico: "+c.getDiagnostico());
+            System.out.println("Duracion en minutos: "+c.getDuracionMinutos());
+        }
     }
 
     @Override

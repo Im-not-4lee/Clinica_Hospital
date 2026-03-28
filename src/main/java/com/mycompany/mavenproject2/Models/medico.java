@@ -64,11 +64,23 @@ public class medico extends Persona{
     public void setConsultorio(int consultorio) {
         this.consultorio = consultorio;
     }
+    
+    public void presentarse()   {
+        System.out.println("\n\tPresentacion");
+        System.out.println("Nombre "+this.getNombre());
+        System.out.println("Edad "+this.getEdad());
+        System.out.println("Cedula "+this.getCedula());
+        System.out.println("Especialidad "+this.getEspecialidad());
+        System.out.println("Tarjeta Profesional "+this.getEspecialidad());
+        System.out.println("Consultorio "+this.getConsultorio());
+    }
 
     @Override
     public String toString() {
         return "medico{" + "especialidad=" + especialidad + ", tarjetaProfesional=" + tarjetaProfesional + ", consultorio=" + consultorio + '}';
     }
+
+  
    
 
 }
